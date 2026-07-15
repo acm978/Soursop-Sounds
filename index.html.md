@@ -16,7 +16,7 @@
 
 &#x20;       body {
 
-&#x20;           background-color: #f5efe6; /\* Cozy off-white/paper color \*/
+&#x20;          background-color: #008080; /* teal */
 
 &#x20;           color: #2b2b2b;            /\* Soft charcoal instead of harsh black \*/
 
