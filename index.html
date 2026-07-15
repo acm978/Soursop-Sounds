@@ -3,144 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soursop Sounds</title>
+    <title>Soursop Sounds // Roots & Dubplate</title>
     <style>
-        /* --- Retro Theme Colors & Fonts --- */
+        /* --- Roots Reggae & Dub System Theme --- */
         body {
-            background-color: #267378 !important; /* Force Slate Teal */
-            color: #2b2b2b;            
-            font-family: "Courier New", Courier, monospace; 
+            background-color: #0b0c10; /* Heavy bassline dark background */
+            background-image: radial-gradient(#1c201a 1px, transparent 1px); /* Warm vinyl dust grid */
+            background-size: 24px 24px;
+            color: #d1ccbc; /* Warm sand/parchment text color */
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 12px;
             line-height: 1.6;
             margin: 0;
-            padding: 30px; /* Generous padding so you can see the teal background */
+            padding: 20px;
         }
 
-        /* --- Layout Container --- */
+        /* --- Main Sound System Container --- */
         #container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            border: 3px double #2b2b2b; 
-            background-color: #fcfbf9; /* Cozy vintage paper color inside the container */
-            padding: 30px;
-            box-shadow: 8px 8px 0px #1a4f52; /* Darker teal shadow */
+            background-color: #121511; /* Forest-tinged dark charcoal */
+            border: 2px solid #e5a93b; /* Rich Gold Border */
+            border-top: 4px solid #b33939; /* Roots Red Accent Top */
+            border-bottom: 4px solid #218c74; /* Dub Green Accent Bottom */
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(229, 169, 59, 0.15); /* Soft gold warmth */
         }
 
-        /* --- Header / Banner --- */
+        /* --- Sound System Header --- */
         header {
+            border-bottom: 2px dashed #e5a93b;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
-            border-bottom: 2px solid #2b2b2b;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: -1px;
+            font-size: 2.8rem;
+            color: #e5a93b; /* Golden Sun */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0px #b33939; /* Red shadow */
+            font-family: 'Impact', 'Arial Black', sans-serif;
         }
 
         header p {
             margin: 5px 0 0 0;
-            font-style: italic;
-            color: #555;
+            font-size: 0.95rem;
+            color: #218c74; /* Conscious Green */
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* --- Two-Column Layout --- */
         #content-wrapper {
             display: flex;
             flex-direction: row;
-            gap: 25px;
+            gap: 20px;
         }
 
-        main {
-            flex: 3;
-        }
-
+        /* Left Column (Sound Controls & Heavy Rotation) */
         aside {
-            flex: 1;
-            border-left: 1px dashed #2b2b2b;
-            padding-left: 20px;
-            font-size: 0.9rem;
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        /* --- Blog Posts --- */
-        article {
-            margin-bottom: 40px;
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 20px;
+        /* Right Column (The Logbook / Dub Central) */
+        main {
+            flex: 1.8;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        article:last-of-type {
-            border-bottom: none;
+        /* --- Reggae Custom Content Boxes --- */
+        .reggae-box {
+            border: 1px solid #218c74; /* Forest Green Border */
+            background-color: #181c17; /* Dark leaf green-gray */
         }
 
-        .post-date {
-            font-size: 0.85rem;
-            color: #666;
+        .reggae-box h2 {
+            margin: 0;
+            background-color: #218c74; /* Green header */
+            color: #121511;
+            font-size: 13px;
+            padding: 6px 12px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #121511;
         }
 
-        article h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.6rem;
+        .box-content {
+            padding: 12px;
         }
 
-        /* --- Links & Navigation --- */
+        /* --- Logbook Entries --- */
+        .blog-entry {
+            border-bottom: 1px dashed #3a4237;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .blog-entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .blog-date {
+            font-size: 10px;
+            color: #e5a93b; /* Gold Date */
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .blog-entry h3 {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            color: #b33939; /* Roots Red Titles */
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Links & Interaction --- */
         a {
-            color: #8b4513; 
+            color: #e5a93b;
             text-decoration: underline;
+            font-weight: bold;
         }
 
         a:hover {
-            color: #d2691e;
-            background-color: #f5efe6;
+            color: #218c74;
+            background-color: #181c17;
         }
 
-        ul {
-            list-style-type: "» "; 
-            padding-left: 20px;
-            margin: 10px 0;
+        /* --- Custom Dubplate Music Player --- */
+        .dub-player {
+            background: #0b0c10;
+            border: 2px solid #b33939; /* Red Hot Player */
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
         }
 
-        li {
+        .track-info {
+            color: #e5a93b;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-family: monospace;
+        }
+
+        .player-controls {
+            font-size: 16px;
+            color: #218c74;
+            letter-spacing: 12px;
+            cursor: pointer;
+        }
+
+        /* --- Top Artists Grid (Heavy Rotation) --- */
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .artist-card {
+            background-color: #121511;
+            border: 1px solid #3a4237;
+            padding: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .artist-card:hover {
+            border-color: #e5a93b;
+        }
+
+        .artist-avatar {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #1d221c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
             margin-bottom: 5px;
+            border: 1px solid #e5a93b; /* Gold Vinyl boundary */
         }
 
-        .box {
-            border: 1px solid #2b2b2b;
-            padding: 12px;
-            margin-bottom: 20px;
-            background-color: #f5f3ef;
+        .artist-name {
+            font-size: 10px;
+            color: #d1ccbc;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
-        .box h3 {
-            margin: 0 0 10px 0;
-            font-size: 1rem;
-            border-bottom: 1px solid #2b2b2b;
-            padding-bottom: 3px;
-        }
-
+        /* --- Footer --- */
         footer {
             text-align: center;
-            border-top: 2px solid #2b2b2b;
-            margin-top: 20px;
-            padding-top: 20px;
-            font-size: 0.8rem;
+            margin-top: 30px;
+            border-top: 1px dashed #3a4237;
+            padding-top: 15px;
+            font-size: 10px;
+            color: #5d6659;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px; /* Smaller teal border on mobile phones */
-            }
+        /* Responsive */
+        @media (max-width: 650px) {
             #content-wrapper {
                 flex-direction: column;
-            }
-            aside {
-                border-left: none;
-                border-top: 1px dashed #2b2b2b;
-                padding-left: 0;
-                padding-top: 20px;
             }
         }
     </style>
@@ -149,53 +229,93 @@
 
 <div id="container">
 
-    <!-- Header -->
+    <!-- Header / Banner -->
     <header>
-        <h1>SOURSOP-SOUNDS</h1>
-        <p>Sounds of the caribbean</p>
+        <h1>SOURSOP SOUNDS</h1>
+        <p>🔊 Roots • Dub • Heavyweight Sound System 🔊</p>
     </header>
 
     <!-- Main Content Area -->
     <div id="content-wrapper">
         
-        <!-- Blog Posts Column -->
-        <main>
-            
-            <article>
-                <div class="post-date">July 14, 2026</div>
-                <h2>Welcome to Soursop Sounds!</h2>
-                <p>
-                    This is your number one source for Reggae and Island sounds in the North East.
-                </p>
-                <p>
-                    This is a space dedicated for the distro of the Soursop-Sounds tapes, local Northeast shows, and curating sounds, thoughts.  
-                </p>
-            </article>
-
-        </main>
-
-        <!-- Sidebar Column -->
+        <!-- Left Column (Dub Player, Sound System Bio, Heavy Rotation) -->
         <aside>
             
-            <!-- About Me Widget -->
-            <div class="box">
-                <h3>Upcoming Tapes</h3>
-                <p>Root, Rock, Reggae Vol.1</p>
+            <!-- Custom Dub Player -->
+            <div class="dub-player">
+                <div class="track-info">📼 Dubplate // Soursop Cut 01</div>
+                <div class="player-controls">⏮ ■ ▶ ⏭ 🔊</div>
             </div>
 
-            <!-- Playlist/Now Playing Widget -->
-            <div class="box">
-                <h3>On Air</h3>
-                <p>https://open.spotify.com/track/6nLASCk64Sz9iKDdBHY9Sz?si=b884a558d9c54ba2</p>
+            <!-- About/Bio Box -->
+            <div class="reggae-box">
+                <h2>The Selector</h2>
+                <div class="box-content">
+                    <p><strong>Vibe:</strong> Conscious & Heavy 🦁</p>
+                    <p>Spinning classic roots, stepper vinyl cuts, and deep cavernous echo chamber dubs. Tuning the frequency right from the home deck.</p>
+                </div>
+            </div>
+
+            <!-- Heavy Rotation Box -->
+            <div class="reggae-box">
+                <h2>Heavy Rotation</h2>
+                <div class="box-content">
+                    <p>Records spinning on the turntable this week:</p>
+                    <div class="artists-grid">
+                        
+                        <!-- Artist 1 -->
+                        <div class="artist-card">
+                            <div class="artist-avatar">👑</div>
+                            <div class="artist-name">Bob Marley</div>
+                        </div>
+
+                        <!-- Artist 2 -->
+                        <div class="artist-card">
+                            <div class="artist-avatar">🎚️</div>
+                            <div class="artist-name">King Tubby</div>
+                        </div>
+
+                        <!-- Artist 3 -->
+                        <div class="artist-card">
+                            <div class="artist-avatar">🧪</div>
+                            <div class="artist-name">Scientist</div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </aside>
+        
+        <!-- Right Column (The Logbook Feed) -->
+        <main>
+            
+            <div class="reggae-box">
+                <h2>The Dub Chamber Log</h2>
+                <div class="box-content">
+                    
+                    <div class="blog-entry">
+                        <div class="blog-date">July 14, 2026 // Rockers Session</div>
+                        <h3>Dropping the needle on Soursop Sounds</h3>
+                        <p>
+                            We've loaded up the custom sound system template. The red, gold, and green accents are locked in, and the dark wood cabinet styling is active. 
+                        </p>
+                        <p>
+                            This blog will be used for keeping track of vintage vinyl finds, favorite record shops, custom soundboard setups, and deep dub production thoughts. Keep the bass heavy and the minds conscious.
+                        </p>
+                        <a href="#">Comment (0)</a> | <a href="#">Pull Up Selector</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
 
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Best viewed in any browser. Powered by pure HTML & CSS.</p>
+        <p>Soursop Sounds © 1970s-2026. Custom Roots & Dub Layout.</p>
     </footer>
 
 </div>
