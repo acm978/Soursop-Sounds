@@ -48,6 +48,22 @@
             font-family: 'Impact', 'Arial Black', sans-serif;
         }
 
+        /* Custom Thin Leaf styling */
+        .leaf-icon {
+            display: block;
+            margin: 12px auto 8px auto;
+            width: 24px;
+            height: 24px;
+        }
+
+        .leaf-icon path {
+            fill: none;
+            stroke: #218c74; /* Forest Green thin line */
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
         header p {
             margin: 5px 0 0 0;
             font-size: 0.95rem;
@@ -189,34 +205,42 @@
             background-color: #121511;
             border: 1px solid #3a4237;
             padding: 5px;
+            text-decoration: none; /* Strip link underline on container */
+            display: block;
             transition: all 0.2s ease;
         }
 
         .artist-card:hover {
             border-color: #e5a93b;
+            transform: scale(1.03); /* Subtle pop on hover */
         }
 
         .artist-avatar {
             width: 100%;
             aspect-ratio: 1;
             background-color: #1d221c;
+            overflow: hidden; /* Keep the album artwork inside the borders */
+            margin-bottom: 5px;
+            border: 1px solid #e5a93b; /* Gold vinyl boundary */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: #e5a93b;
-            margin-bottom: 5px;
-            border: 1px solid #e5a93b; /* Gold Vinyl boundary */
+        }
+
+        .artist-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Crop perfectly to match square format */
         }
 
         .artist-name {
-            font-size: 10px;
+            font-size: 9px;
             color: #d1ccbc;
             font-weight: bold;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            text-decoration: none;
         }
 
         /* --- Footer --- */
@@ -244,6 +268,19 @@
     <!-- Header / Banner -->
     <header>
         <h1>SOURSOP SOUNDS</h1>
+        
+        <!-- SVG Custom Thin Leaf (Draws cleanly on all screens) -->
+        <svg class="leaf-icon" viewBox="0 0 24 24">
+            <path d="M12,22 L12,18 
+                     M12,18 C11,15 7,16 5,14 C7,13 10,14 12,18
+                     M12,18 C13,15 17,16 19,14 C17,13 14,14 12,18
+                     M12,18 C10,13 6,11 3,9 C6,8 9,10 12,18
+                     M12,18 C14,13 18,11 21,9 C18,8 15,10 12,18
+                     M12,18 C9,11 7,7 6,4 C8,4 10,8 12,18
+                     M12,18 C15,11 17,7 18,4 C16,4 14,8 12,18
+                     M12,18 C11,12 11,8 12,2 C13,8 13,12 12,18" />
+        </svg>
+
         <p>>> ROOTS // DUB // HEAVYWEIGHT SOUND SYSTEM &lt;&lt;</p>
     </header>
 
@@ -276,30 +313,36 @@
                 </div>
             </div>
 
-            <!-- Heavy Rotation Box -->
+            <!-- Heavy Rotation Box (Updated LP Cover Links) -->
             <div class="reggae-box">
                 <h2>Heavy Rotation</h2>
                 <div class="box-content">
                     <p>Records spinning on the turntable this week:</p>
                     <div class="artists-grid">
                         
-                        <!-- Artist 1 -->
-                        <div class="artist-card">
-                            <div class="artist-avatar">LP 1</div>
+                        <!-- Artist 1 (Steel Pulse - True Democracy) -->
+                        <a href="https://en.wikipedia.org/wiki/True_Democracy" target="_blank" class="artist-card">
+                            <div class="artist-avatar">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/9/90/True_Democracy.jpg" alt="Steel Pulse - True Democracy">
+                            </div>
+                            <div class="artist-name">Steel Pulse</div>
+                        </a>
+
+                        <!-- Artist 2 (Bob Marley - Confrontation) -->
+                        <a href="https://en.wikipedia.org/wiki/Confrontation_(album)" target="_blank" class="artist-card">
+                            <div class="artist-avatar">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/ab/BobMarleyConfrontation.jpg" alt="Bob Marley - Confrontation">
+                            </div>
                             <div class="artist-name">Bob Marley</div>
-                        </div>
+                        </a>
 
-                        <!-- Artist 2 -->
-                        <div class="artist-card">
-                            <div class="artist-avatar">LP 2</div>
-                            <div class="artist-name">King Tubby</div>
-                        </div>
-
-                        <!-- Artist 3 -->
-                        <div class="artist-card">
-                            <div class="artist-avatar">LP 3</div>
-                            <div class="artist-name">Scientist</div>
-                        </div>
+                        <!-- Artist 3 (Peter Tosh - Legalize It) -->
+                        <a href="https://en.wikipedia.org/wiki/Legalize_It" target="_blank" class="artist-card">
+                            <div class="artist-avatar">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/1/14/Legalize_It_album_cover.jpg" alt="Peter Tosh - Legalize It">
+                            </div>
+                            <div class="artist-name">Peter Tosh</div>
+                        </a>
 
                     </div>
                 </div>
