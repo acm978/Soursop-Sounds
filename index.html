@@ -160,10 +160,20 @@
         }
 
         .player-controls {
-            font-size: 16px;
+            font-size: 18px;
             color: #218c74;
-            letter-spacing: 12px;
+            letter-spacing: 15px;
+            user-select: none;
+        }
+
+        /* Make the buttons feel clickable */
+        .player-btn {
             cursor: pointer;
+            transition: color 0.1s ease;
+        }
+
+        .player-btn:hover {
+            color: #e5a93b; /* Glow Gold on hover */
         }
 
         /* --- Top Artists Grid (Heavy Rotation) --- */
@@ -193,7 +203,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #e5a93b;
             margin-bottom: 5px;
             border: 1px solid #e5a93b; /* Gold Vinyl boundary */
         }
@@ -232,7 +244,7 @@
     <!-- Header / Banner -->
     <header>
         <h1>SOURSOP SOUNDS</h1>
-        <p>🔊 Roots • Dub • Heavyweight Sound System 🔊</p>
+        <p>>> ROOTS // DUB // HEAVYWEIGHT SOUND SYSTEM &lt;&lt;</p>
     </header>
 
     <!-- Main Content Area -->
@@ -243,15 +255,23 @@
             
             <!-- Custom Dub Player -->
             <div class="dub-player">
-                <div class="track-info">📼 Dubplate // Soursop Cut 01</div>
-                <div class="player-controls">⏮ ■ ▶ ⏭ 🔊</div>
+                <!-- Displays the track initially -->
+                <div class="track-info" id="status-display">[TAPE] The Heptones - Rasta Cool</div>
+                
+                <!-- Set the source to point to your hosted mp3 file -->
+                <audio id="audio-element" src="rasta_cool.mp3" preload="auto"></audio>
+
+                <div class="player-controls">
+                    <span class="player-btn" onclick="playMusic()">PLAY</span>
+                    <span class="player-btn" onclick="stopMusic()">STOP</span>
+                </div>
             </div>
 
             <!-- About/Bio Box -->
             <div class="reggae-box">
                 <h2>The Selector</h2>
                 <div class="box-content">
-                    <p><strong>Vibe:</strong> Conscious & Heavy 🦁</p>
+                    <p><strong>Vibe:</strong> Conscious & Heavy</p>
                     <p>Spinning classic roots, stepper vinyl cuts, and deep cavernous echo chamber dubs. Tuning the frequency right from the home deck.</p>
                 </div>
             </div>
@@ -265,19 +285,19 @@
                         
                         <!-- Artist 1 -->
                         <div class="artist-card">
-                            <div class="artist-avatar">👑</div>
+                            <div class="artist-avatar">LP 1</div>
                             <div class="artist-name">Bob Marley</div>
                         </div>
 
                         <!-- Artist 2 -->
                         <div class="artist-card">
-                            <div class="artist-avatar">🎚️</div>
+                            <div class="artist-avatar">LP 2</div>
                             <div class="artist-name">King Tubby</div>
                         </div>
 
                         <!-- Artist 3 -->
                         <div class="artist-card">
-                            <div class="artist-avatar">🧪</div>
+                            <div class="artist-avatar">LP 3</div>
                             <div class="artist-name">Scientist</div>
                         </div>
 
@@ -295,7 +315,7 @@
                 <div class="box-content">
                     
                     <div class="blog-entry">
-                        <div class="blog-date">July 14, 2026 // Rockers Session</div>
+                        <div class="blog-date">July 15, 2026 // Rockers Session</div>
                         <h3>Dropping the needle on Soursop Sounds</h3>
                         <p>
                             We've loaded up the custom sound system template. The red, gold, and green accents are locked in, and the dark wood cabinet styling is active. 
@@ -315,10 +335,33 @@
 
     <!-- Footer -->
     <footer>
-        <p>Soursop Sounds © 1970s-2026. Custom Roots & Dub Layout.</p>
+        <p>Soursop Sounds [1970s-2026] Custom Roots & Dub Layout.</p>
     </footer>
 
 </div>
+
+<!-- --- AUDIO JAVASCRIPT CONTROL --- -->
+<script>
+    const audio = document.getElementById("audio-element");
+    const display = document.getElementById("status-display");
+
+    function playMusic() {
+        audio.play()
+            .then(() => {
+                display.innerText = "SPINNING: RASTA COOL // LIVE";
+            })
+            .catch(error => {
+                display.innerText = "[LOAD ERROR] Check rasta_cool.mp3";
+                console.error("Playback failed:", error);
+            });
+    }
+
+    function stopMusic() {
+        audio.pause();
+        audio.currentTime = 0; // Rewind
+        display.innerText = "[TAPE] The Heptones - Rasta Cool";
+    }
+</script>
 
 </body>
 </html>
