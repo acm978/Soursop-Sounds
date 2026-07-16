@@ -256,10 +256,10 @@
             <!-- Custom Dub Player -->
             <div class="dub-player">
                 <!-- Displays the track initially -->
-                <div class="track-info" id="status-display">[TAPE] The Heptones - Rasta Cool</div>
+                <div class="track-info" id="status-display">[TAPE] The Heptones - Cool Rasta</div>
                 
-                <!-- Set the source to point to your hosted mp3 file -->
-                <audio id="audio-element" src="rasta_cool.mp3" preload="auto"></audio>
+                <!-- Updated source file pointing to cool_rasta.mp3 -->
+                <audio id="audio-element" src="cool_rasta.mp3" preload="auto"></audio>
 
                 <div class="player-controls">
                     <span class="player-btn" onclick="playMusic()">PLAY</span>
@@ -348,10 +348,10 @@
     function playMusic() {
         audio.play()
             .then(() => {
-                display.innerText = "SPINNING: RASTA COOL // LIVE";
+                display.innerText = "SPINNING: COOL RASTA // LIVE";
             })
             .catch(error => {
-                display.innerText = "[LOAD ERROR] Check rasta_cool.mp3";
+                display.innerText = "[LOAD ERROR] Check cool_rasta.mp3";
                 console.error("Playback failed:", error);
             });
     }
@@ -359,7 +359,7 @@
     function stopMusic() {
         audio.pause();
         audio.currentTime = 0; // Rewind
-        display.innerText = "[TAPE] The Heptones - Rasta Cool";
+        display.innerText = "[TAPE] The Heptones - Cool Rasta";
     }
 </script>
 
